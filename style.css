@@ -1,0 +1,198 @@
+
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-fundo: #f4f7fb;
+    --cor-texto: #1e293b;
+    --cor-secundaria: #64748b;
+    --cor-primaria: #2563eb;
+    --cor-branca: #ffffff;
+    --cor-borda: #e2e8f0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.7;
+}
+
+/* Conteúdo centralizado */
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+/* Cabeçalho principal */
+.cabecalho {
+    background: linear-gradient(135deg, #0f172a, #1d4ed8);
+    color: var(--cor-branca);
+    text-align: center;
+    padding: 70px 0;
+}
+
+.etiqueta {
+    display: inline-block;
+    color: #bfdbfe;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.cabecalho h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.subtitulo {
+    color: #dbeafe;
+    font-size: 1.1rem;
+}
+
+/* Introdução */
+.introducao {
+    background-color: var(--cor-branca);
+    padding: 30px;
+    margin-top: 35px;
+    border-radius: 14px;
+    border: 1px solid var(--cor-borda);
+}
+
+.introducao h2,
+.secao-praticas h2,
+.conclusao h2 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.introducao p,
+.conclusao p {
+    color: var(--cor-secundaria);
+}
+
+/* Grade responsiva dos cards */
+.secao-praticas {
+    padding: 45px 0;
+}
+
+.secao-praticas > h2 {
+    margin-bottom: 24px;
+}
+
+.grade-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* Estilo compartilhado dos cards */
+.card {
+    background-color: var(--cor-branca);
+    padding: 26px;
+    border: 1px solid var(--cor-borda);
+    border-top: 4px solid var(--cor-primaria);
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.numero-card {
+    display: inline-block;
+    color: var(--cor-primaria);
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--cor-secundaria);
+    font-size: 0.95rem;
+}
+
+/* Classes específicas de cada característica */
+.card-legibilidade {
+    border-top-color: #2563eb;
+}
+
+.card-organizacao {
+    border-top-color: #059669;
+}
+
+.card-consistencia {
+    border-top-color: #d97706;
+}
+
+.card-manutenibilidade {
+    border-top-color: #7c3aed;
+}
+
+.card-colaboracao {
+    border-top-color: #db2777;
+}
+
+/* Conclusão */
+.conclusao {
+    background-color: #eaf1ff;
+    padding: 30px;
+    margin-bottom: 45px;
+    border-radius: 14px;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: #0f172a;
+    color: var(--cor-branca);
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.creditos {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+/* Adaptação para tablets e celulares */
+@media (max-width: 800px) {
+    .grade-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cabecalho {
+        padding: 55px 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .grade-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .introducao,
+    .conclusao {
+        padding: 22px;
+    }
+
+    .secao-praticas h2,
+    .introducao h2,
+    .conclusao h2 {
+        font-size: 1.35rem;
+    }
+}
+
